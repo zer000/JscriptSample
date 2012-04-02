@@ -1,0 +1,244 @@
+
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<! >
+<! >
+
+<!-- Begin
+Yahoo = "http://search.yahoo.com/bin/search?p=";
+Alta = "http://www.altavista.digital.com/cgi-bin/query?pg=q&what=web&q=";
+Direct = "http://www.directhit.com/fcgi-bin/DirectHitWeb.fcg?alias=websrch&qry=";
+Lycos = "http://www.lycos.com/cgi-bin/pursuit?query=";
+Crawler = "http://www.webcrawler.com/cgi-bin/WebQuery?searchText=";
+GoCom = "http://www.go.com/Titles?col=WW&svx=home_searchbox&sv=IS&lk=noframes&qt=";
+DejaNews = "http://www.deja.com/products/search/search.xp?PVW=&QRY=";
+Google = "http://www.google.com/search?q=";
+Go2Net = "http://search.metacrawler.com/crawler?method=0&searchType=web&format=portal&cat=web&redirect=&target=&power=1&opendir_p1=&p_region=&query=&general=";
+SearchCom = "http://www.search.com/search?channel=1&tag=st.se.fd..sch&submit=Search&q=";
+Mamma = "http://www.mamma.com/Mamma?p1=1&timeout=4&qtype=0&query=";
+DogPile = "http://search.dogpile.com/texis/search?geo=no&fs=web&av=custom&engines=goto&engines=looksmart&engines=thunderstone&engines=findwhat&engines=sprinks&engines=directhit&engines=google&engines=infoseek&engines=lycos&engines=kanoodle&engines=opendir&engines=realnames&engines=altavista&engines=yahoo&q=";
+Excite = "http://www.excite.com/search.gw?searchType=Concept&search=";
+DMOZ = "http://search.dmoz.org/cgi-bin/search?search=";
+Snap = "http://www.nbci.com/search/directory/results/1,61,-0,00.html?tag=st.sn.fd.srch.bar&keyword=";
+Galaxy = "http://www.einet.net/cgi-bin/wais-text-multi?keywords=";
+var got=0;
+var url = "";
+var plus="";
+var mag="";
+function search4(item){
+stringPlus();
+resultsWindow=window.open();
+resultsWindow.document.open();
+resultsWindow.document.write("<head><title>Close this window "
++ "to return to Search Page</title></head>"
++ "<FRAMESET ROWS=50%,50%><FRAMESET COLS=50%,50%>"
++ "<FRAME NAME='frame0' SRC='" + computeFrameSrc(0) + "'>"
++ "<FRAME NAME='frame1' SRC='" + computeFrameSrc(1) + "'>"
++ "</FRAMESET><FRAMESET COLS=50%,50%><FRAME NAME='frame2' "
++ "SRC='" + computeFrameSrc(2) + "'><FRAME NAME='frame3' "
++ "SRC='" + computeFrameSrc(3) + "'></FRAMESET></FRAMESET>");
+resultsWindow.document.close();
+got = 0;
+}
+function search2(item){
+stringPlus();
+resultsWindow=window.open();
+resultsWindow.document.open();
+resultsWindow.document.write("<head><title>Close this window "
++ "to return to Total search</title></head><FRAMESET ROWS=50%,50%>"
++ "<FRAME NAME='frame0' SRC='" + computeFrameSrc(0) + "'><FRAME "
++ "NAME='frame1' SRC='" + computeFrameSrc(1) + "'></FRAMESET>");
+resultsWindow.document.close();
+got = 0;
+}
+function stringPlus() {
+for (var j=0; j < window.document.choose4.text.value.length; j++) {
+if (window.document.choose4.text.value.charAt(j) == " ")
+mag += "+";
+else mag += window.document.choose4.text.value.charAt(j);}
+}
+function numChecked(item) {
+plus = escape(item.text.value);
+var h=0;
+num=0;
+for (var l=0; l < item.check1.length; l++) {
+if (item.check1[l].checked) {
+h++;
+if (h++ <= 4){
+if (l == "0"){
+num = 1;}
+else if (l == "1") num = 2;
+else if (l == "2") num = 3;
+else if (l == "3") num = 4;
+else if (l == "4") num = 5;
+else if (l == "5") num = 6;
+else if (l == "6") num = 7;
+else if (l == "7") num = 8;
+else if (l == "8") num = 9;
+else if (l == "9") num = 10;
+else if (l == "10") num = 11;
+else if (l == "11") num = 12;
+else if (l == "12") num = 13;
+else if (l == "13") num = 14;
+else if (l == "14") num = 15;
+      }
+   }
+}
+if (h == 2)
+Results(num-1);
+else if (h == 4)
+search2(item);
+else
+search4(item);
+}
+function computeFrameSrc(num) {
+var k=-1;
+for (var j=got; j < document.choose4.check1.length; j++) {
+if (document.choose4.check1[j].checked){
+k++;
+if (k++ <= num){
+if (j == "0"){
+url = Yahoo + plus;
+got = 1;}
+else if (j == "1"){
+url = DMOZ + plus;
+got = 2;}
+else if (j == "2"){
+url = Snap + plus;
+got = 3;}
+else if (j == "3"){
+url = Alta + plus + "&mode=and";
+got = 4;}
+else if (j == "4"){
+url = Direct + plus;
+got = 5;}
+else if (j == "5"){
+url = Lycos + plus + "&backlink=217&maxhits=25";
+got = 6;}
+else if (j == "6"){
+url = Excite + plus + "&category=default&mode=relevance&showqbe=1&display=html3,hb";
+got = 7;}
+else if (j == "7"){
+url = Crawler + plus + "&maxHits=25";
+got = 8;}
+else if (j == "8"){
+url = GoCom + plus;
+got = 9;}
+else if (j == "9"){
+url = DejaNews + plus + "&defaultOp=AND&svcclass=dncurrent&maxhits=25";
+got = 10;}
+else if (j == "10"){
+url = Google + plus;
+got = 11;}
+else if (j == "11"){
+url = Go2Net + plus;
+got = 12;}
+else if (j == "12"){
+url = SearchCom + plus;
+got = 13;}
+else if (j == "13"){
+url = Mamma + plus;
+got = 14;}
+else if (j == "14"){
+url = DogPile + plus;
+got = 15;}
+return url;
+      }
+   }
+}
+url = "javascript:void(0)";
+return url;
+}
+function Results(place){
+stringPlus();
+resultsWin = window.open("","results");
+if (place == "0")
+url = Yahoo + plus;
+else if (place == "1")
+url = DMOZ + plus;
+else if (place == "2")
+url = Snap + plus;
+else if (place == "3")
+url = Alta + plus + "&mode=and";
+else if (place == "4")
+url = Direct + plus + "&mode=and";
+else if (place == "5")
+url = Lycos + plus + "&backlink=217&maxhits=25";
+else if (place == "6")
+url = Excite + plus + "&category=default&mode=relevance&showqbe=1&display=html3,hb";
+else if (place == "7")
+url = Crawler + plus + "&maxHits=25";
+else if (place == "8")
+url = GoCom + plus;
+else if (place == "9")
+url = DejaNews + plus + "&defaultOp=AND&svcclass=dncurrent&maxhits=25";
+else if (place == "10")
+url = Google + plus + "&hits=25&disp=Text+Only";
+else if (place == "11")
+url = Go2Net + plus;
+else if (place == "12")
+url = SearchCom + plus;
+else if (place == "13")
+url = Mamma + plus;
+else if (place == "14")
+url = DogPile + plus;
+resultsWin.location = url;
+}
+// End  -->
+</script>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+
+<center><b>JavaScript Search</b><p>
+This script will run the same search across <br>
+4 of the major search engines at one time.
+<form name="choose4" action="javascript:numChecked(document.choose4) //"><p>
+<table><tr><td><b>Directories</b><br>
+<input type="checkbox" name="check1" value="Yahoo"
+onClick="choose4.check1.value='Yahoo'">Yahoo<br>
+<input type="checkbox" name="check1" value="DMOZ"
+onClick="choose4.check1.value='DMOZ'">DMOZ<br>
+<input type="checkbox" name="check1" value="Snap"
+onClick="choose4.check1.value='Snap'">Snap<br><br></td>
+<td width="15"></td>
+<td><b>Search Engines</b><br>
+<input type="checkbox" name="check1" value="Alta"
+onClick="choose4.check1.value='Alta'">Alta Vista<br>
+<input type="checkbox" name="check1" value="Direct"
+onClick="choose4.check1.value='Direct'">Direct Hit<br> 
+<input type="checkbox" name="check1" value="Lycos"
+onClick="choose4.check1.value='Lycos'">Lycos<br>
+<input type="checkbox" name="check1" value="Excite"
+onClick="choose4.check1.value='Excite'">Excite<br></td>
+<td><br><input type="checkbox" name="check1" value="Crawler"
+onClick="choose4.check1.value='Crawler'">Webcrawler<br>
+<input type="checkbox" name="check1" value="Go.com"
+onClick="choose4.check1.value='Go.com'">Go.com<br>
+<input type="checkbox" name="check1" value="DejaNews"
+onClick="choose4.check1.value='DejaNews'">DejaNews<br>
+<input type="checkbox" name="check1" value="Google"
+onClick="choose4.check1.value='Google'">Google<br> </td>
+<td width="15"></td>
+<td><b>Meta Searches</b><br>
+<input type="checkbox" name="check1" value="Go2Net"
+onClick="choose4.check1.value='Go2Net'">Go2Net<br>
+<input type="checkbox" name="check1" value="SearchCom"
+onClick="choose4.check1.value='SearchCom'">Search.Com<BR>
+<input type="checkbox" name="check1" value="Mamma"
+onClick="choose4.check1.value='Mamma'">Mamma<br>
+<input type="checkbox" name="check1" value="DogPile"
+onClick="choose4.check1.value='DogPile'">DogPile<br>
+</td></tr></table><P>
+<B>Enter text to find</B>:<BR>
+<input type="text" name="text" size=30>
+<input type="submit" name="send" value="Search">
+</form>
+</center>
+
+ 
+
